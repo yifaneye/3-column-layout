@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>3-column layout </title>
+	<style>
+		/*  Common styles */
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.layout {
+			margin-bottom: 50px;
+		}
+
+		.layout > * {
+			height: 150px;
+			text-align: center;
+		}
+
+		.layout > .left, .layout > .right {
+			background: pink;
+			width: 300px;
+		}
+
+		.layout > .center {
+			background: lightblue;
+		}
+
+
+		/* Float */
+		#float > .left {
+			float: left;
+		}
+
+		#float > .right {
+			float: right;
+		}
+
+
+		/*  Flexbox */
+		#flex {
+			display: flex;
+		}
+
+		#flex > .center {
+			flex-grow: 1;
+		}
+
+
+		/* Grid */
+		#grid {
+			display: grid;
+			grid-template-columns: 300px auto 300px;
+		}
+
+
+		/* Background gradient + Grid positioning */
+		#gradient {
+			display: grid;
+			grid-template-columns: 300px auto 300px;
+			background: linear-gradient(
+					to right,
+					pink 0px,
+					pink 300px,
+					lightblue 300px,
+					lightblue calc(100% - 300px),
+					pink calc(100% - 300px),
+					pink 100%
+			);
+		}
+
+		#gradient > * {
+			background: none;
+		}
+
+		/* Table */
+		#table {
+			display: table;
+			width: 100%;
+		}
+
+		#table > * {
+			display: table-cell;
+		}
+
+		/* Absolute positioning */
+		#absolute > * {
+			position: absolute;
+		}
+
+		#absolute > .left {
+			left: 0;
+		}
+
+		#absolute > .center {
+			left: 300px;
+			right: 300px;
+		}
+
+		#absolute > .right {
+			right: 0;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<section class="layout" id="float">
+	<aside class="left">Left</aside>
+	<aside class="right">Right</aside>
+	<article class="center">Middle</article>
+</section>
+<section class="layout" id="flex">
+	<aside class="left">Left</aside>
+	<article class="center">Middle</article>
+	<aside class="right">Right</aside>
+</section>
+<section class="layout" id="grid">
+	<aside class="left">Left</aside>
+	<article class="center">Middle</article>
+	<aside class="right">Right</aside>
+</section>
+<section class="layout" id="gradient">
+	<aside class="left">Left</aside>
+	<article class="center">Middle</article>
+	<aside class="right">Right</aside>
+</section>
+<section class="layout" id="table">
+	<aside class="left">Left</aside>
+	<article class="center">Middle</article>
+	<aside class="right">Right</aside>
+</section>
+<section class="layout" id="absolute">
+	<aside class="left">Left</aside>
+	<article class="center">Middle</article>
+	<aside class="right">Right</aside>
+</section>
+
+</body>
+
+</html>
